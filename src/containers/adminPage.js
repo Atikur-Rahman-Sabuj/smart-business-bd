@@ -13,7 +13,7 @@ class page2 extends Component {
                 <br/><br/>
                 <Link className="btn btn-sm btn-outline-primary" to="/">Home</Link>
                 <br/><br/>
-                <Link className="btn btn-sm btn-outline-primary" to="/page1">Page1</Link>
+                <Link className="btn btn-sm btn-outline-primary" to="/userpage">User page</Link>
             </div>
          );
     }

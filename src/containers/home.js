@@ -11,9 +11,9 @@ class home extends Component {
             <div>
                 This is home page accessible for all
                 <br/><br/>
-                <Link className="btn btn-sm btn-outline-primary" to="/page1">Page1</Link>
+                <Link className="btn btn-sm btn-outline-primary" to="/userpage">User page</Link>
                 <br/><br/>
-                <Link className="btn btn-sm btn-outline-primary" to="/page2">Page2</Link>
+                <Link className="btn btn-sm btn-outline-primary" to="/adminpage">Admin page</Link>
             </div>
          );
     }
