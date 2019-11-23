@@ -7,6 +7,7 @@ import promiseMiddleware from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import Routes from './route';
+import FlashMessageList from './components/flashMessage/flashMessageList'
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware,ReduxThunk)(createStore)
 
@@ -14,6 +15,7 @@ const createStoreWithMiddleware = applyMiddleware(promiseMiddleware,ReduxThunk)(
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         <BrowserRouter>
+            <FlashMessageList/>
             <Routes/>
         </BrowserRouter>
     </Provider>

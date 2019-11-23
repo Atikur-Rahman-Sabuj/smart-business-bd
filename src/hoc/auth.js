@@ -15,6 +15,7 @@ export default function(ComposedClass,needAuthorization=true, authorizedFor="use
             this.props.dispatch(userAuth())      
         }
         componentWillReceiveProps(nextProps){
+            console.log(nextProps)
             if(nextProps.user.type){
                 if (!needAuthorization) {
                     this.setState({ loading: false });
@@ -25,12 +26,20 @@ export default function(ComposedClass,needAuthorization=true, authorizedFor="use
                     }else{
                         this.props.history.push(`/notauthorize`)
                     }
-                }else{
+                }else if(authorizedFor==='admin'){
                     if(nextProps.user.type==='admin'){
                         this.setState({ loading: false });
                     }else{
                         this.props.history.push(`/notauthorize`)
                     }
+                }else if(authorizedFor==='none'){
+                    if(nextProps.user.type==='none'){
+                        this.setState({ loading: false });
+                    }else{
+                        this.props.history.push(`/home`)
+                    }
+                }else{
+                    this.props.history.push(`/home`)
                 }
             }
         }
